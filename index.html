@@ -1,17 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <button class="btn btn-outline-success" type="button">Instructions</button>
+      <button class="btn btn-outline-success" type="button">About the game</button>
+    </form>
+  </nav>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+
+</head>
+
+<body class="container">
+  <h1>TIC TAC TOE</h1>
+  <h3>Player X and Player 0</h3>
+
+  <div class="row">
+    <div id="box1" class="col-xs-6 col-md-4 box">box1(0,0)</div>
+    <div class="col-xs-6 col-md-4 box">box2(0,1)</div>
+    <div class="col-xs-6 col-md-4 box">box3(0,2)</div>
+  </div>
+
+  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+  <div class="row">
+    <div class="col-xs-6 col-md-4 box grey">box4(1,0)</div>
+    <div class="col-xs-6 col-md-4 box grey">box5(1,1)</div>
+    <div class="col-xs-6 col-md-4 box grey">box6(1,2)</div>
+
+  </div>
+
+  <!-- Columns start at 50% wide on mobile and bump up to 33.3% 6wide on desktop -->
+  <div class="row">
+    <div class="col-xs-6 col-md-4 box teal">box(2,0)</div>
+    <div class="col-xs-6 col-md-4 box teal">box(2,1)</div>
+    <div class="col-xs-6 col-md-4 box teal">box(2,2)</div>
+  </div>
+
+</body>
+
 </html>

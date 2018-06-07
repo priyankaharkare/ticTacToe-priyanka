@@ -1,2 +1,35 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$background-color: #4e4e4e;
+$font-color: #dfdfdf;
+$white: #fff;
+$grey: rgb(128, 128, 128);
+$teal: rgb(0, 156, 161);
+$black: #000;
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+  margin: 50px;
+}
+
+.btn-outline-success {
+  background-color: $white;
+  color: $teal;
+}
+
+.box {
+  border: 1px solid $white;
+  height: 150px;
+  width: 150px;
+}
+
+.grey {
+  background-color: $grey;
+}
+
+.teal {
+  background-color: $teal;
+}
