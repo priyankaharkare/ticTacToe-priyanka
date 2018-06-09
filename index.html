@@ -19,35 +19,65 @@
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-
-
 </head>
 
 <body class="container">
+
+  <h4>Sign Up</h4>
+<form id ='sign-up-form'>
+  <input name="credentials[email]" placeholder="Email" type="email"/>
+  <input name="credentials[password]" placeholder="Password" type="password"/>
+  <input name="credentials[password_confirmation]" placeholder="Confirm Password" type="password"/>
+  <button class = "login-button" type="submit"> Submit Login</button>
+</form>
+
+ <h4>Sign In</h4>
+<form id ='sign-in-form'>
+  <input name="credentials[email]" placeholder="Email" type="email"/>
+  <input name="credentials[password]" placeholder="Password" type="password"/>
+  <button class ="sign-in-button" type="submit">Log in</button>
+</form>
+
   <h1>TIC TAC TOE</h1>
   <h3>Player X and Player 0</h3>
 
   <div class="row">
     <div id="box1" class="col-xs-6 col-md-4 box">box1(0,0)</div>
-    <div class="col-xs-6 col-md-4 box">box2(0,1)</div>
-    <div class="col-xs-6 col-md-4 box">box3(0,2)</div>
+    <div id="box2" class="col-xs-6 col-md-4 box">box2(0,1)</div>
+    <div id="box3" class="col-xs-6 col-md-4 box">box3(0,2)</div>
   </div>
 
   <!-- Stack the columns on mobile by making one full-width and the other half-width -->
   <div class="row">
-    <div class="col-xs-6 col-md-4 box grey">box4(1,0)</div>
-    <div class="col-xs-6 col-md-4 box grey">box5(1,1)</div>
-    <div class="col-xs-6 col-md-4 box grey">box6(1,2)</div>
+    <div id="box4" class="col-xs-6 col-md-4 box grey">box4(1,0)</div>
+    <div id="box5" class="col-xs-6 col-md-4 box grey">box5(1,1)</div>
+    <div id="box6" class="col-xs-6 col-md-4 box grey">box6(1,2)</div>
 
   </div>
 
   <!-- Columns start at 50% wide on mobile and bump up to 33.3% 6wide on desktop -->
   <div class="row">
-    <div class="col-xs-6 col-md-4 box teal">box(2,0)</div>
-    <div class="col-xs-6 col-md-4 box teal">box(2,1)</div>
-    <div class="col-xs-6 col-md-4 box teal">box(2,2)</div>
+    <div id="box7" class="col-xs-6 col-md-4 box teal">box(2,0)</div>
+    <div id="box8" class="col-xs-6 col-md-4 box teal">box(2,1)</div>
+    <div id="box9" class="col-xs-6 col-md-4 box teal">box(2,2)</div>
   </div>
+<div> <button id ='reset-button'>Start Over</button></div>
+<div class = "game over"> Game Over </div
 
+  <h4>Change Password </h4>
+  <form id ='change-password-form'>
+    <input name="passwords[old]" placeholder="Old Password" type="password"/>
+    <input name="passwords[new]" placeholder="New Password" type="password"/>
+    <button type="submit">Change Password</button>
+  </form>
+
+  <section>
+    <button id ='sign-out'>Sign Out</button>
+  </section >
+
+  <div id ="content"></div>
+      </body>
+  </html>
 </body>
 
 </html>

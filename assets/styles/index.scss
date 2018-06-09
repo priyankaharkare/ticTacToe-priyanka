@@ -33,3 +33,22 @@ body {
 .teal {
   background-color: $teal;
 }
+
+#reset-button {
+  background-color: $white;
+  color: $teal;
+  margin: 20px;
+  font-size: 15px;
+  float: left;
+  padding: 10px;
+}
+
+.login-button {
+  background-color: $white;
+  color: $teal;
+}
+
+.sign-in-button {
+  background-color: $white;
+  color: $teal;
+}
