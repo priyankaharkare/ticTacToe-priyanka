@@ -2,14 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
-
-  <nav class="navbar navbar-light bg-light">
-    <form class="form-inline">
-      <button class="btn btn-outline-success" type="button">Instructions</button>
-      <button class="btn btn-outline-success" type="button">About the game</button>
-    </form>
-  </nav>
+  <title>Tic Tac Toe</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,6 +15,12 @@
 </head>
 
 <body class="container">
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <button class="btn btn-outline-success" type="button">Instructions</button>
+      <button class="btn btn-outline-success" type="button">About the game</button>
+    </form>
+  </nav>
 
   <h4>Sign Up</h4>
 <form id ='sign-up-form'>
@@ -37,6 +36,17 @@
   <input name="credentials[password]" placeholder="Password" type="password"/>
   <button class ="sign-in-button" type="submit">Log in</button>
 </form>
+
+<h4>Change Password </h4>
+<form id ='change-password-form'>
+  <input name="passwords[old]" placeholder="Old Password" type="password"/>
+  <input name="passwords[new]" placeholder="New Password" type="password"/>
+  <button class ="change-password-button" type="submit">Change Password</button>
+</form>
+
+<section>
+  <button id ='sign-out'>Sign Out</button>
+</section >
 
   <h1>TIC TAC TOE</h1>
   <h3>Player X and Player 0</h3>
@@ -61,23 +71,12 @@
     <div id="box8" class="col-xs-6 col-md-4 box teal">box(2,1)</div>
     <div id="box9" class="col-xs-6 col-md-4 box teal">box(2,2)</div>
   </div>
-<div> <button id ='reset-button'>Start Over</button></div>
+<div> <button class ='reset-button'>Start Over</button></div>
 <div class = "game over"> Game Over </div
+ <div class = "endgame">
+   <div class "text"></div>
 
-  <h4>Change Password </h4>
-  <form id ='change-password-form'>
-    <input name="passwords[old]" placeholder="Old Password" type="password"/>
-    <input name="passwords[new]" placeholder="New Password" type="password"/>
-    <button type="submit">Change Password</button>
-  </form>
-
-  <section>
-    <button id ='sign-out'>Sign Out</button>
-  </section >
 
   <div id ="content"></div>
       </body>
-  </html>
-</body>
-
 </html>
