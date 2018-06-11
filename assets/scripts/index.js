@@ -15,5 +15,6 @@ $(() => {
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
-  $('.box').on('click', authEvents.switchTurn)
-})
+  $('.box').on('click', authEvents.onClick) // trying to create a function
+
+}) // for clickon each box

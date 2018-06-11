@@ -8,6 +8,7 @@ $white: #fff;
 $grey: rgb(128, 128, 128);
 $teal: rgb(0, 156, 161);
 $black: #000;
+$green: #50C878;
 
 body {
   background-color: $background-color;
@@ -23,8 +24,13 @@ body {
 .box {
   border: 1px solid $white;
   cursor: pointer;
+  font-size: 50px;
   height: 150px;
   width: 150px;
+}
+
+.box:hover {
+  background-color: $green;
 }
 
 .grey {
