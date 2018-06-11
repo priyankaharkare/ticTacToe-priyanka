@@ -5,47 +5,76 @@ const authApi = require('./api1')
 const authUi = require('./ui')
 //
 
-
-//
-const playerX = 'X'
+const gameBoard = ['', '', '', '', '', '', '', '', '']
+const playerX = 'X' // assign each player a string
 const playerY = 'O'
-let currentTurn = 1
-let movesMade = 0
 
+const onClick = function onClick () {
 
+  // we check if board[i]has as assigned value
+event.preventDefault()
+  let board = [] // if it doesnt, then we want to assign the'x' or 'y'
+
+// add a function to cehck if board is empty
+  if (board[i] === '') { +
+    originalBoard[i] = document.getElementById('box'+i)
+    console.log('this position is occupied')
+  }
+}
+
+let currentTurn = 1 // need to know whose turn it is
+let movesMade = 0 // how many moves made needed to later calculate the min/max
+// moves made
+
+const switchPlayer = function (value) {
+  movesMade++
+  if (currentTurn === 1) {
+    event.target.innerHTML = playerX
+    currentTurn++ // we check which player's turn it is.
+  } else {
+    event.target.innerHTML = playerY
+    currentTurn--
+  }
+}
+
+function winLines (symbol) {
+  return false
+  if((board[0]===board[1]===[2]) || (board[0]===board[3]===[6] )|| (board[0]===board[4]===[8]) ||
+  (board[1]===b === d[4]===board[7]) || (board[6]===board[7]===board[8]) ||
+  (board[2]===board[5]===board[8]) ||(board[3]===board[4]===board[5])||
+  (board[2]===board[4]===board[6])) {
+  } else {
+ return true
+  }
+}
+// function checkForWinner(){
+//   if(movesMade)>4 {
+//
+//   }
+// }
 // function startGame(){
 //   document.turn = 'X'; //create a function to start the game . we wnat the box to have an event handler
 // }
-function playGame(){
-  displayOutput()
-}
-function switchTurn(){
-  box.inner
-
-}
-
-const gameBoard = ['0', '1', '2', '3', '4', '5', '6  ', ' 7', '8']
-const game = function(board, coords) {
-  let combinations = ''
-  coords.forEach((point) => {
-    const y = point[0]
-    const x = point[1]
-    const index = 3 * y + x // assign coordinates and get the location
-    const symbol = board[index]
-    combinations += symbol // this will help figure out the location the user clicks
-  })
-  return combinations
-}
-
-const gameReset
+// function playGame(){
+//   displayOutput()
+// }
+// f
+//   box.inner
+// const game = function(board, coords) {   //no need for it.too complicated
+//     const y = point[0]
+//     const x = point[1]
+//     const index = 3 * y + x // assign coordinates and get the location
+//     const symbol = board[index]
+//     combinations += symbol // this will help figure out the location the user clicks
+//   })
+//   return combinations
+// }
 // console.log(gameBoard[2 + (1 * 3)])
 //
 // //
 // // 2d const game = [         // wanted to ideally do it in a 2 d format.
 // is it possible to create a call back and convert the 2d to single array?
 
-// //   const player_x: 'x',
-// //   const player_y: 'y'
 // //   const winCombinations: [
 // //     [1,2,3],
 // //     [1,5,9],
@@ -59,31 +88,13 @@ const gameReset
 // // ]
 
 
-function resetGame() {
-  clearBoard()
-}
-
-var checkForSymbol[] // check if that box has anything in it first
-  function onClick(box) = {
-    if (document.getElementById(box).innerHTML !=" "){
-      console.log("Choose another box")
-      $('#content').html('This box is taken,Choose another box')
-    } else} n m hkn,mjb
-    if (player)
-  }
-
-function isBoardEmpty(board){
-  let
-
-}
-
-const changeSymbol = function(data) {
+const changeSymbol = function (data) {
   event.preventDefault()
   console.log('I need to switch symbol')
   console.log('On signIn function data is', data)
 }
 
-const onSignUp = function(event) {
+const onSignUp = function (event) {
   event.preventDefault()
   console.log('I am trying to sign up')
   const data = getFormFields(event.target)
@@ -93,7 +104,7 @@ const onSignUp = function(event) {
     .catch(authUi.signUpFail)
 }
 
-const onSignIn = function(event) {
+const onSignIn = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log('Did you sign in?')
@@ -102,7 +113,7 @@ const onSignIn = function(event) {
     .then(authUi.signInSuccess)
     .catch(authUi.signInFail)
 }
-const onChangePassword = function(event) {
+const onChangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log('change your pw')
@@ -112,7 +123,7 @@ const onChangePassword = function(event) {
     .catch(authUi.changePasswordFail)
 }
 
-const onSignOut = function(data) {
+const onSignOut = function (data) {
   event.preventDefault()
   authApi.signOut()
     .then(authApi.signOutSuccess)
