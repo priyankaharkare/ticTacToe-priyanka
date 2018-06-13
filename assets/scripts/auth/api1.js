@@ -5,7 +5,7 @@ const store = require('../store.js')
 const signUp = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/sign-up',
+    url: 'https://aqueous-atoll-85096.herokuapp.com/sign-up',
     data: data
   })
 }
@@ -13,7 +13,7 @@ const signUp = function (data) {
 const signIn = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/sign-in',
+    url: 'https://aqueous-atoll-85096.herokuapp.com/sign-in',
     data: data
   })
 }
@@ -22,7 +22,7 @@ const changePassword = function (data) {
   console.log('token is ', store.user.token)
   return $.ajax({
     method: 'PATCH',
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/change-password',
+    url: 'https://aqueous-atoll-85096.herokuapp.com/change-password',
     data: data,
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -32,7 +32,7 @@ const changePassword = function (data) {
 const signOut = function (data) {
   return $.ajax({
     method: 'DELETE',
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/sign-out',
+    url: 'https://aqueous-atoll-85096.herokuapp.com/sign-out',
     data: data,
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -42,7 +42,7 @@ const signOut = function (data) {
 const createGame = function () {
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/games',
+    url: 'https://aqueous-atoll-85096.herokuapp.com/games',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -52,7 +52,7 @@ const createGame = function () {
 const getGames = function () {
   return $.ajax({
     method: 'GET',
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/games/',
+    url: 'https://aqueous-atoll-85096.herokuapp.com/games/',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -61,7 +61,7 @@ const getGames = function () {
 const updateGame = function () {
   return $.ajax({
     method: 'PATCH',
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/games/' + store.game.id,
+    url: 'https://aqueous-atoll-85096.herokuapp.com/games/' + store.game.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
