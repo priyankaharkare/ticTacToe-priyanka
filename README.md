@@ -18,6 +18,24 @@ USER STORIES:
 - As a user, I want to be able to play this on the computer( and on other mobile devices)
 - As a user, my game will reset as soon as there's a winner and a new game will begin
 
+GAME Instructions
+- The goal of tic-tac-toe is to be the first player to get three in a row on a
+3 x 3 grid, or four in a row in a 4 x 4 grid.<
+
+- To start, one player draws a board, creating a grid of squares,
+ usually 3 x 3 or 4 x 4.
+
+- The player who is playing "X" always goes first
+
+- Players alternate placing Xs and Os on the board until either one player has
+three in a row, horizontally, vertically, or diagonally; or all nine squares
+are filled
+
+- If a player is able to draw three of their Xs or three of their Os in a row,
+ then that player wins.
+
+- If all nine squares are filled and neither player has three in a row,
+the game is a draw.
 
 THINGS I WOULD LIKE TO DO IF I HAD MORE TIME:
 Probably add more style and some information on the page. Would have liked to
