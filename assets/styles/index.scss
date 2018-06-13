@@ -10,11 +10,21 @@ $teal: rgb(0, 156, 161);
 $black: #000;
 $green: #50c878;
 $turqoise: #adeaea;
+$dark-blue: #036;
+$border: #808080;
+$red: #f00;
 
 body {
   background-color: $background-color;
   color: $font-color;
-  margin: 50px;
+  margin: 10px;
+}
+
+.buttons {
+  border: 1px solid $border;
+  float: left;
+  margin: 5px;
+  padding: 5px;
 }
 
 .btn-outline-success {
@@ -23,7 +33,17 @@ body {
 }
 
 .form-style {
-  color: #f00;
+  color: $red;
+}
+
+.content-msg {
+  color: $red;
+  font: 20px;
+}
+
+h1 {
+  color: $dark-blue;
+  font-size: 70px;
 }
 
 .box {
@@ -53,8 +73,8 @@ body {
   color: $teal;
   float: left;
   font-size: 15px;
-  margin: 20px;
-  padding: 10px;
+  margin: 10px;
+  padding: 5px;
 }
 
 .get-game {
@@ -62,8 +82,17 @@ body {
   color: $teal;
   float: left;
   font-size: 15px;
-  margin: 20px;
-  padding: 10px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.new-game {
+  background-color: $white;
+  color: $teal;
+  float: left;
+  font-size: 15px;
+  margin: 10px;
+  padding: 5px;
 }
 
 .login-button {
@@ -76,10 +105,10 @@ body {
   color: $teal;
 }
 
-#sign-out {
+.signing-out {
   background-color: $white;
   color: $teal;
-  margin: 40px;
+  margin: 30px;
 }
 
 .change-password-button {
