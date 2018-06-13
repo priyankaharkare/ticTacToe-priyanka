@@ -3,13 +3,8 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const authApi = require('./api1')
 const authUi = require('./ui')
-const authLogic = require('./logic')
+// const authLogic = require('./logic')
 //
-
-// const gameBoard = ['', '', '', '', '', '', '', '', '']
-const playerX = 'X' // assign each player a string
-const playerY = 'O'
-
 // const onClick = function myBoard () {
 //   let symbol = $(this).prop('box' + 1) // pulling out only the ids after clicking
 //     return // on the div box
@@ -25,70 +20,20 @@ const playerY = 'O'
 //   }
 // }
 
-let currentTurn = 1 // need to know whose turn it is
-let movesMade = 0 // how many moves made needed to later calculate the min/max
-// moves made
-
-const switchPlayer = function (value) {
-  movesMade++
-  if (currentTurn === 1) {
-    event.target.innerHTML = playerX
-    currentTurn++ // we check which player's turn it is.
-  } else {
-    event.target.innerHTML = playerY
-    currentTurn--
-  }
-}
-
-function winLines (symbol) {
-  return false
-  if((board[0]===board[1]===[2]) || (board[0]===board[3]===[6] )|| (board[0]===board[4]===[8]) ||
-  (board[1]===b === d[4]===board[7]) || (board[6]===board[7]===board[8]) ||
-  (board[2]===board[5]===board[8]) ||(board[3]===board[4]===board[5])||
-  (board[2]===board[4]===board[6])) {
-  } else {
- return true
-  }
-}
-// function checkForWinner(){
-//   if(movesMade)>4 {
+// let currentTurn = 1 // need to know whose turn it is
+// let movesMade = 0 // how many moves made needed to later calculate the min/max
+// // moves made
 //
+// const switchPlayer = function (value) {
+//   movesMade++
+//   if (currentTurn === 1) {
+//     event.target.innerHTML = playerX
+//     currentTurn++ // we check which player's turn it is.
+//   } else {
+//     event.target.innerHTML = playerY
+//     currentTurn--
 //   }
 // }
-// function startGame(){
-//   document.turn = 'X'; //create a function to start the game . we wnat the box to have an event handler
-// }
-// function playGame(){
-//   displayOutput()
-// }
-// f
-//   box.inner
-// const game = function(board, coords) {   //no need for it.too complicated
-//     const y = point[0]
-//     const x = point[1]
-//     const index = 3 * y + x // assign coordinates and get the location
-//     const symbol = board[index]
-//     combinations += symbol // this will help figure out the location the user clicks
-//   })
-//   return combinations
-// }
-// console.log(gameBoard[2 + (1 * 3)])
-//
-// //
-// // 2d const game = [         // wanted to ideally do it in a 2 d format.
-// is it possible to create a call back and convert the 2d to single array?
-
-// //   const winCombinations: [
-// //     [1,2,3],
-// //     [1,5,9],
-// //     [1,4,7],
-// //     [2,5,8],
-// //     [4,5,6],
-// //     [7,5,3],
-// //     [3,6,9],
-// //     [7,8,9]
-// //     ]
-// // ]
 
 const changeSymbol = function (data) {
   event.preventDefault()
@@ -128,14 +73,42 @@ const onChangePassword = function (event) {
 const onSignOut = function (data) {
   event.preventDefault()
   authApi.signOut()
-    .then(authApi.signOutSuccess)
-    .catch(authApi.signOutFailure)
+    .then(authUi.signOutSuccess)
+    .catch(authUi.signOutFailure)
 }
 
+const onCreateGame = function (event) {
+  event.preventDefault()
+  console.log('is the new game up yet')
+
+  authApi.createGame(event)
+    .then(authUi.createGameSuccess)
+    .catch(authUi.createGameFail)
+}
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  console.log('check check..is the game updated')
+
+  authApi.updateGame(event)
+    .then(authUi.updateGameSuccess)
+    .catch(authUi.updateGameFail)
+}
+const onGetGames = function (event) {
+  console.log('did this click?', onGetGames)
+  event.preventDefault()
+  console.log('why do you want to know when you last lost')
+
+  authApi.getGames(event)
+    .then(authUi.getGamesSuccess)
+    .catch(authUi.getGamesFail)
+}
 module.exports = {
   changeSymbol: changeSymbol,
   onSignUp: onSignUp,
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
-  onSignOut: onSignOut
+  onSignOut: onSignOut,
+  onCreateGame: onCreateGame,
+  onUpdateGame: onUpdateGame,
+  onGetGames: onGetGames
 }

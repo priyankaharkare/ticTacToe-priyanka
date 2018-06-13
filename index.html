@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html>
+  <!DOCTYPE html>
+  <html>
 
-<head>
-  <title>Tic Tac Toe</title>
+  <head>
+    <title>Tic Tac Toe</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Do not add `link` tags-->
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- Do not add `script` tags-->
-  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
 <body class="container">
@@ -19,11 +19,12 @@
     <form class="form-inline">
       <button class="btn btn-outline-success" type="button">Instructions</button>
       <button class="btn btn-outline-success" type="button">About the game</button>
+      <button  id = "new-game" class="btn btn-outline-success" type="button">New Game</button>
     </form>
   </nav>
 
   <h4>Sign Up</h4>
-<form id ='sign-up-form'>
+<form id ='sign-up-form' class = "form-style">
   <input name="credentials[email]" placeholder="Email" type="email"/>
   <input name="credentials[password]" placeholder="Password" type="password"/>
   <input name="credentials[password_confirmation]" placeholder="Confirm Password" type="password"/>
@@ -31,52 +32,55 @@
 </form>
 
  <h4>Sign In</h4>
-<form id ='sign-in-form'>
+<form id ='sign-in-form' class = "form-style">
   <input name="credentials[email]" placeholder="Email" type="email"/>
   <input name="credentials[password]" placeholder="Password" type="password"/>
   <button class ="sign-in-button" type="submit">Log in</button>
 </form>
 
 <h4>Change Password </h4>
-<form id ='change-password-form'>
+<form id ='change-password-form' class = "form-style">
   <input name="passwords[old]" placeholder="Old Password" type="password"/>
   <input name="passwords[new]" placeholder="New Password" type="password"/>
   <button class ="change-password-button" type="submit">Change Password</button>
 </form>
 
 <section>
-  <button id ='sign-out'>Sign Out</button>
+  <button id ="sign-out">Sign Out</button>
 </section >
 
   <h1>TIC TAC TOE</h1>
-<div id "message">Message here </div>
-  <div class="box">
-    <div id="box-0" class="col-xs-6 col-md-4 box">box1(0,0)</div>
-    <div id="box-1" class="col-xs-6 col-md-4 box">box2(0,1)</div>
-    <div id="box-2" class="col-xs-6 col-md-4 box">box3(0,2)</div>
+
+
+  <div id ="content"></div>
+
+  <div class="row">
+    <div id="0" class="col-xs-6 col-md-4 box"></div>
+    <div id="3" class="col-xs-6 col-md-4 box"></div>
+    <div id="6" class="col-xs-6 col-md-4 box"></div>
   </div>
 
   <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-  <div class="box">
-    <div id="box-3" class="col-xs-6 col-md-4 box grey">box4(1,0)</div>
-    <div id="box-4" class="col-xs-6 col-md-4 box grey">box5(1,1)</div>
-    <div id="box-5" class="col-xs-6 col-md-4 box grey">box6(1,2)</div>
+  <div class="row">
+    <div id="1" class="col-xs-6 col-md-4 box"></div>
+    <div id="4" class="col-xs-6 col-md-4 box"></div>
+    <div id="7" class="col-xs-6 col-md-4 box"></div>
 
   </div>
 
   <!-- Columns start at 50% wide on mobile and bump up to 33.3% 6wide on desktop -->
-  <div class="box">
-    <div id="box-6" class="col-xs-6 col-md-4 box teal">box(2,0)</div>
-    <div id="box-7" class="col-xs-6 col-md-4 box teal">box(2,1)</div>
-    <div id="box-8" class="col-xs-6 col-md-4 box teal">box(2,2)</div>
+  <div class="row">
+    <div id="2" class="col-xs-6 col-md-4 box"></div>
+    <div id="5" class="col-xs-6 col-md-4 box"></div>
+    <div id="8" class="col-xs-6 col-md-4 box"></div>
   </div>
 
-<div> <button class ='reset-button'>Start Over</button></div>
+<div> <button class = "reset-button">Start Over</button></div>
+<div> <button class ="get-game">Game History</button></div>
 
  <div class = "end-game">
    <div class "text"></div>
 </div>
 
-  <div id ="content"></div>
-      </body>
+
 </html>
