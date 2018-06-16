@@ -12,16 +12,14 @@ let currentPlayer = 'X' // a ssign a string to the player
 const switchPlayer = function (event) {
   console.log(`store.game.is`, store.game)
   if (event.target.innerHTML === '' && store.game.over === false) {
-    // console.log('start playing now')
     if (currentPlayer === 'X') {
       store.game.cells[event.target.id] = 'X'
       event.target.innerHTML = 'X'
       playerTurn++ // we add a turn each time a player plays
       didAnyoneWin(event)
       currentPlayer = 'O'
-      // console.log('current player 1 is ' + currentPlayer)
-    } else {
-      store.game.cells[event.target.id] = 'O'
+     } else {
+     store.game.cells[event.target.id] = 'O'
       event.target.innerHTML = 'O'
       playerTurn++
       didAnyoneWin(event)

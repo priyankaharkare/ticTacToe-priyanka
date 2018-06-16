@@ -1,11 +1,12 @@
 'use strict'
 
 const store = require('../store.js')
+const config = require('../config.js')
 
 const signUp = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://aqueous-atoll-85096.herokuapp.com/sign-up',
+    url: config.apiUrl + '/sign-up',
     data: data
   })
 }
@@ -13,7 +14,7 @@ const signUp = function (data) {
 const signIn = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://aqueous-atoll-85096.herokuapp.com/sign-in',
+    url: config.apiUrl + '/sign-in',
     data: data
   })
 }
@@ -22,7 +23,7 @@ const changePassword = function (data) {
   console.log('token is ', store.user.token)
   return $.ajax({
     method: 'PATCH',
-    url: 'https://aqueous-atoll-85096.herokuapp.com/change-password',
+    url: config.apiUrl + '/change-password',
     data: data,
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -32,7 +33,7 @@ const changePassword = function (data) {
 const signOut = function (data) {
   return $.ajax({
     method: 'DELETE',
-    url: 'https://aqueous-atoll-85096.herokuapp.com/sign-out',
+    url: config.apiUrl + '/sign-out',
     data: data,
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -42,7 +43,7 @@ const signOut = function (data) {
 const createGame = function () {
   return $.ajax({
     method: 'POST',
-    url: 'https://aqueous-atoll-85096.herokuapp.com/games',
+    url: config.apiUrl + '/games',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -52,7 +53,7 @@ const createGame = function () {
 const getGames = function () {
   return $.ajax({
     method: 'GET',
-    url: 'https://aqueous-atoll-85096.herokuapp.com/games/',
+    url: config.apiUrl + '/games/',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -61,7 +62,7 @@ const getGames = function () {
 const updateGame = function () {
   return $.ajax({
     method: 'PATCH',
-    url: 'https://aqueous-atoll-85096.herokuapp.com/games/' + store.game.id,
+    url: config.apiUrl + store.game.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     },

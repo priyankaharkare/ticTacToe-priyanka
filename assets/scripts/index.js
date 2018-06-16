@@ -16,7 +16,7 @@ $(() => {
   // $('#box1').on('click', authEvents.changeSymbol)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#sign-out').on('click', authEvents.onSignOut)
   $('.box').on('click', authLogic1.switchPlayer)
   // $('.reset-button').on('click', authLogic1.resetGame)
   $('.new-game').on('click', authEvents.onCreateGame)
