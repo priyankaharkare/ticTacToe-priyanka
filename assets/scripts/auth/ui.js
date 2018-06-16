@@ -35,6 +35,17 @@ const changePasswordFail = function (error) {
     'Please try again ! The error is ', error)
 }
 
+const signOutSuccess = function (response) {
+  delete store.user
+  console.log('you were successfully signed out')
+  $('#content').html('You have successfully signed out ! See you soon')
+}
+
+const signOutFailure = function (error) {
+  console.log('something went wrong.Here is your error :', error)
+  $('#content').html('sorry, could not sign you out !!')
+}
+
 const createGameSuccess = function (response) {
   console.log('create game success is ', createGameSuccess)
   store.game = response.game
@@ -76,5 +87,7 @@ module.exports = {
   updateGameSuccess,
   updateGameFail,
   getGamesSuccess,
-  getGamesFail
+  getGamesFail,
+  signOutSuccess,
+  signOutFailure
 }
