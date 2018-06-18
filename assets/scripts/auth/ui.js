@@ -67,7 +67,7 @@ const updateGameFail = function (response) {
   $('#content').html(' Sorry, game update not possible at this time!')
 }
 const getGamesSuccess = function (response) {
-  // console.log('getGamesSuccess is ', response)
+  console.log('getGamesSuccess is ', response)
   $('#content').html('Here is all the information for you: ', store.user)
 }
 const getGamesFail = function (error) {
