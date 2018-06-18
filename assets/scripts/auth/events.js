@@ -5,53 +5,9 @@ const authApi = require('./api1')
 const authUi = require('./ui')
 const store = require('../store.js')
 
-// const Logic1 = require('./Logic1')
-
-// const authLogic1 = require('./Logic1')
-
-// const authLogic = require('./logic')
-//
-// const onClick = function myBoard () {
-//   let symbol = $(this).prop('box' + 1) // pulling out only the ids after clicking
-//     return // on the div box
-// }
-// // we check if board[i]has as assigned value
-//
-//   let board = [] // if it doesnt, then we want to assign the'x' or 'y'
-
-// add a function to cehck if board is empty
-//   if (board[i] === '') { +
-//     originalBoard[i] = document.getElementById('box'+i)
-//     console.log('this position is occupied')
-//   }
-// }
-
-// let currentTurn = 1 // need to know whose turn it is
-// let movesMade = 0 // how many moves made needed to later calculate the min/max
-// // moves made
-//
-// const switchPlayer = function (value) {
-//   movesMade++
-//   if (currentTurn === 1) {
-//     event.target.innerHTML = playerX
-//     currentTurn++ // we check which player's turn it is.
-//   } else {
-//     event.target.innerHTML = playerY
-//     currentTurn--
-//   }
-// }
-
-// const changeSymbol = function (data) {
-//   event.preventDefault()
-//   console.log('I need to switch symbol')
-//   console.log('On signIn function data is', data)
-// }
-
 const onSignUp = function (event) {
   event.preventDefault()
-  // console.log('I am trying to sign up')
   const data = getFormFields(event.target)
-
   authApi.signUp(data)
     .then(authUi.signUpSuccess)
     .catch(authUi.signUpFail)
@@ -60,22 +16,21 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // console.log('Did you sign in?')
-
   authApi.signIn(data)
     .then(authUi.signInSuccess)
     .catch(authUi.signInFail)
 }
+
 const onChangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // console.log('change your pw')
-
   authApi.changePassword(data)
     .then(authUi.changePasswordSuccess)
     .catch(authUi.changePasswordFail)
 }
+
 const onSignOut = function (data) {
+  console.log(`in sign out function`)
   event.preventDefault()
   authApi.signOut()
     .then(authUi.signOutSuccess)
@@ -83,17 +38,11 @@ const onSignOut = function (data) {
 }
 
 const resetGame = function () {
-  let currentPlayer = 'X'
   store.game.cells = []
   $('.box').empty('data-cells')
-  currentPlayer = 'X'
-  // console.log(store.game.cells)
 }
-// console.log('is this working')
 const onCreateGame = function (event) {
   event.preventDefault()
-  // console.log('is the new game up yet')
-
   authApi.createGame(event)
     .then(authUi.createGameSuccess)
     .catch(authUi.createGameFail)
@@ -101,12 +50,11 @@ const onCreateGame = function (event) {
 }
 const onUpdateGame = function (event) {
   event.preventDefault()
-  // console.log('check check..is the game updated')
-
   authApi.updateGame(event)
     .then(authUi.updateGameSuccess)
     .catch(authUi.updateGameFail)
 }
+
 const onGetGames = function (event) {
   // console.log('did this click?', onGetGames)
   event.preventDefault()
@@ -117,7 +65,6 @@ const onGetGames = function (event) {
     .catch(authUi.getGamesFail)
 }
 module.exports = {
-  // changeSymbol: changeSymbol,
   onSignUp: onSignUp,
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
