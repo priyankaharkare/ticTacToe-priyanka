@@ -1,20 +1,23 @@
 'use strict'
 const store = require('../store.js')
 // store is a js object. you can add keys to it.
+// creating UI for fail and success events
 const signUpSuccess = function (signUpResponse) {
-  // console.log('signUpResponse is ', signUpResponse)
-  $('#content').html("You've signed up, Please Sign In to begin the game!")
+  $('#content').html("You've signed up, Please Login to begin the game!")
 }
+
 const signUpFail = function (error) {
   console.log('Error in sign up is ', error)
   $('#content').html(`Sorry, please try again!,
-      <br/> If you already have an account, please SIGN IN`)
+      <br/> Please login if you already have an account`)
 }
+
 const signInSuccess = function (response) {
   store.user = response.user
   $('#content').html(`Yaay! You're signed in! <br/> Click on the New Game Button",
     'and begin the game ! Good Luck !`)
 }
+
 const signInFail = function (response) {
   $('#content').html(`Oh no !Check your username and password and try again !`)
 }
@@ -51,22 +54,21 @@ const createGameFail = function (error) {
 }
 
 const updateGameSuccess = function (response) {
-  // console.log('updateGameSuccess is ', updateGameSuccess)
   $('#content').html(' Game has been updated !')
 }
+
 const updateGameFail = function (response) {
-  // console.log('update fail error is  ', response)
   $('#content').html(' Sorry, game update not possible at this time!')
 }
+
 const getGamesSuccess = function (response) {
-  // console.log(response)
-  // console.log(`getGamesSuccess is`, response.game.player_x.email)
   $('#content').html(`Current Game id is : ${response.game.id} <br/> Your email id is: ${response.game.player_x.email}`)
 }
+
 const getGamesFail = function (response) {
-  // console.log('getGamesFail is ', error)
   $('#content').html('We could not load the user board. Please try again later !')
 }
+
 module.exports = {
   signUpSuccess,
   signUpFail,

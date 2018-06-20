@@ -5,11 +5,6 @@ const authApi = require('./api1')
 const authUi = require('./ui')
 const authLogic1 = require('./logic1')
 
-<<<<<<< HEAD
-=======
-// const store = require('../store.js')
-
->>>>>>> project
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -22,10 +17,7 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-<<<<<<< HEAD
 
-=======
->>>>>>> project
   authApi.signIn(data)
     .then(authUi.signInSuccess)
     .catch(authUi.signInFail)
@@ -35,10 +27,7 @@ const onSignIn = function (event) {
 const onChangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-<<<<<<< HEAD
 
-=======
->>>>>>> project
   authApi.changePassword(data)
     .then(authUi.changePasswordSuccess)
     .catch(authUi.changePasswordFail)
@@ -46,23 +35,12 @@ const onChangePassword = function (event) {
 }
 
 const onSignOut = function (data) {
-<<<<<<< HEAD
-  console.log('does this work')
-=======
-  console.log(`in sign out function`)
->>>>>>> project
   event.preventDefault()
   authApi.signOut()
     .then(authUi.signOutSuccess)
     .catch(authUi.signOutFailure)
   $('#sign-out-form').find('input').val('')
 }
-
-// const resetGame = function () {
-//   store.game.cells = []
-//   $('.box').empty('data-cells')
-//   // playerTurn = 0
-// }
 
 const onCreateGame = function (event) {
   event.preventDefault()
@@ -71,6 +49,7 @@ const onCreateGame = function (event) {
     .catch(authUi.createGameFail)
   authLogic1.resetGame()
 }
+
 const onUpdateGame = function (event) {
   event.preventDefault()
   authApi.updateGame(event)
@@ -79,9 +58,7 @@ const onUpdateGame = function (event) {
 }
 
 const onGetGames = function (event) {
-  // console.log('did this click?', onGetGames)
   event.preventDefault()
-
   authApi.getGames(event)
     .then(authUi.getGamesSuccess)
     .catch(authUi.getGamesFail)
@@ -94,5 +71,4 @@ module.exports = {
   onCreateGame: onCreateGame,
   onUpdateGame: onUpdateGame,
   onGetGames: onGetGames
-  // clearField: clearField
 }
