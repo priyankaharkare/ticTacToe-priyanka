@@ -9,7 +9,7 @@ let currentPlayer = 'x' // a ssign a string to the player
 const switchPlayer = function (event) {
   console.log(`store.game.is`, store.game)
   if (event.target.innerHTML === '' && store.game.over === false) {
-     if (currentPlayer === 'x') {
+    if (currentPlayer === 'x') {
       store.game.cells[event.target.id] = 'x'
       event.target.innerHTML = 'x'
       authApi.updateGame()
