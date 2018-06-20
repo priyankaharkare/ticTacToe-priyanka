@@ -43,7 +43,7 @@ const signOut = function (data) {
 const createGame = function () {
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl + '/games',
+    url: config.apiUrl + 'games/',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -53,7 +53,7 @@ const createGame = function () {
 const getGames = function () {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + 'games/',
+    url: config.apiUrl + 'games/' + store.game.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -68,7 +68,7 @@ const updateGame = function () {
     },
     data: {
       game: {
-        cells: {
+        cell: {
           index: event.target.id,
           value: event.target.innerHTML
         },

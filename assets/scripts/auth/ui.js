@@ -3,36 +3,31 @@ const store = require('../store.js')
 // store is a js object. you can add keys to it.
 const signUpSuccess = function (signUpResponse) {
   // console.log('signUpResponse is ', signUpResponse)
-  $('#content').html("You've signed up, Please sign in to begin the game!")
+  $('#content').html("You've signed up, Please Sign In to begin the game!")
 }
 const signUpFail = function (error) {
-  // console.log('Error in sign up is ', error)
-  $('#content').html('Please try signing up again ! The error is ', error)
+  console.log('Error in sign up is ', error)
+  $('#content').html(`Sorry, please try again!,
+      <br/> If you already have an account, please SIGN IN`)
 }
 const signInSuccess = function (response) {
-  // console.log('signInResponse is ', response)
   store.user = response.user
-  console.log(`token is `, store.user.token)
   $('#content').html("Yaay! You're signed in! Click on the New Game Button",
     'and begin the game ! Good Luck !')
 }
-const signInFail = function (error) {
-  // console.log('Error in sign in is ', error)
-  $('#content').html('Oh no !Check your username and password and try again',
-    'The error is ', error)
+const signInFail = function (response) {
+  $('#content').html(`Oh no !Check your username and password and try again !`)
 }
 
 const changePasswordSuccess = function (response) {
   delete store.user
-  // console.log('changePasswordSuccess is ', response)
   $('#content').html('Your Password has been updated',
     'Please use the new Password the next time you login !')
 }
 
-const changePasswordFail = function (error) {
-//   console.log('Error in change pw ', error)
+const changePasswordFail = function (response) {
   $('#content').html('Sorry, you were not able to change your password,',
-    'Please try again ! The error is ', error)
+    'Please try again !')
 }
 
 const signOutSuccess = function (response) {
@@ -41,9 +36,9 @@ const signOutSuccess = function (response) {
   $('#content').html('You have successfully signed out ! See you soon')
 }
 
-const signOutFailure = function (error) {
-  console.log('something went wrong.Here is your error :', error)
-  $('#content').html('sorry, could not sign you out !!')
+const signOutFailure = function (response) {
+  // console.log('something went wrong.Here is your error :', error)
+  $('#content').html('Sorry, try again to Sign Out !!')
 }
 
 const createGameSuccess = function (response) {
@@ -54,8 +49,8 @@ const createGameSuccess = function (response) {
 }
 
 const createGameFail = function (error) {
-  // console.log('The error is ', error)
-  $('#content').html(' Sorry, couldnt load the game. The error is ', error, 'Try again')
+  console.log('The error is ', error)
+  $('#content').html(`Sorry, couldnt load the game. Please try again !`)
 }
 
 const updateGameSuccess = function (response) {
@@ -67,14 +62,14 @@ const updateGameFail = function (response) {
   $('#content').html(' Sorry, game update not possible at this time!')
 }
 const getGamesSuccess = function (response) {
-  console.log('getGamesSuccess is ', response)
-  $('#content').html('Here is all the information for you: ', store.user)
+  // console.log(response)
+  // console.log(`getGamesSuccess is`, response.game.player_x.email)
+  $('#content').html(`Current Game id is : ${response.game.id} <br/> Your email id is: ${response.game.player_x.email}`)
 }
-const getGamesFail = function (error) {
-  // console.log('getGamesFail is ', response)
-  $('#content').html(" Sorry, no Game History for you. Here's your ", error)
+const getGamesFail = function (response) {
+  // console.log('getGamesFail is ', error)
+  $('#content').html('We could not load the user board. Please try again later !')
 }
-
 module.exports = {
   signUpSuccess,
   signUpFail,

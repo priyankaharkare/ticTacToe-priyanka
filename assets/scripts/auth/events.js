@@ -3,7 +3,9 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const authApi = require('./api1')
 const authUi = require('./ui')
-const store = require('../store.js')
+const authLogic1 = require('./logic1')
+
+// const store = require('../store.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -11,6 +13,7 @@ const onSignUp = function (event) {
   authApi.signUp(data)
     .then(authUi.signUpSuccess)
     .catch(authUi.signUpFail)
+  $('#sign-up-form').find('input').val('')
 }
 
 const onSignIn = function (event) {
@@ -19,6 +22,7 @@ const onSignIn = function (event) {
   authApi.signIn(data)
     .then(authUi.signInSuccess)
     .catch(authUi.signInFail)
+  $('#sign-in-form').find('input').val('')
 }
 
 const onChangePassword = function (event) {
@@ -27,6 +31,7 @@ const onChangePassword = function (event) {
   authApi.changePassword(data)
     .then(authUi.changePasswordSuccess)
     .catch(authUi.changePasswordFail)
+  $('#change-password-form').find('input').val('')
 }
 
 const onSignOut = function (data) {
@@ -35,18 +40,21 @@ const onSignOut = function (data) {
   authApi.signOut()
     .then(authUi.signOutSuccess)
     .catch(authUi.signOutFailure)
+  $('#sign-out-form').find('input').val('')
 }
 
-const resetGame = function () {
-  store.game.cells = []
-  $('.box').empty('data-cells')
-}
+// const resetGame = function () {
+//   store.game.cells = []
+//   $('.box').empty('data-cells')
+//   // playerTurn = 0
+// }
+
 const onCreateGame = function (event) {
   event.preventDefault()
   authApi.createGame(event)
     .then(authUi.createGameSuccess)
     .catch(authUi.createGameFail)
-  resetGame()
+  authLogic1.resetGame()
 }
 const onUpdateGame = function (event) {
   event.preventDefault()
@@ -72,4 +80,5 @@ module.exports = {
   onCreateGame: onCreateGame,
   onUpdateGame: onUpdateGame,
   onGetGames: onGetGames
+  // clearField: clearField
 }

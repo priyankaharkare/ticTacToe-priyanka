@@ -1,6 +1,7 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
 LINK OF THE PROJECT:
+https://priyankaharkare.github.io/ticTacToe-priyanka/
 
 WHAT TECHNOLOGIES WERE USED:
 -HTML
@@ -10,6 +11,8 @@ WHAT TECHNOLOGIES WERE USED:
 -Ajax
 -JavaScript
 -jQuery
+
+WIRE FRAME: https://imgur.com/a/9Bdqcao
 
 USER STORIES:
 - As a user, the game should be simple.
