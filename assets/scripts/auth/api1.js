@@ -1,7 +1,11 @@
 'use strict'
 
 const store = require('../store.js')
+<<<<<<< HEAD
 const config = require('../config.js')
+=======
+const config = require('../config')
+>>>>>>> project
 
 const signUp = function (data) {
   return $.ajax({
@@ -43,7 +47,11 @@ const signOut = function (data) {
 const createGame = function () {
   return $.ajax({
     method: 'POST',
+<<<<<<< HEAD
     url: config.apiUrl + '/games',
+=======
+    url: config.apiUrl + 'games/',
+>>>>>>> project
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -53,7 +61,11 @@ const createGame = function () {
 const getGames = function () {
   return $.ajax({
     method: 'GET',
+<<<<<<< HEAD
     url: config.apiUrl + '/games/',
+=======
+    url: config.apiUrl + 'games/' + store.game.id,
+>>>>>>> project
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -62,13 +74,17 @@ const getGames = function () {
 const updateGame = function () {
   return $.ajax({
     method: 'PATCH',
+<<<<<<< HEAD
     url: config.apiUrl + store.game.id,
+=======
+    url: config.apiUrl + 'games/' + store.game.id,
+>>>>>>> project
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
     data: {
       game: {
-        cells: {
+        cell: {
           index: event.target.id,
           value: event.target.innerHTML
         },
