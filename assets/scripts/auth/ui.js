@@ -12,8 +12,8 @@ const signUpFail = function (error) {
 }
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#content').html("Yaay! You're signed in! Click on the New Game Button",
-    'and begin the game ! Good Luck !')
+  $('#content').html(`Yaay! You're signed in! <br/> Click on the New Game Button",
+    'and begin the game ! Good Luck !`)
 }
 const signInFail = function (response) {
   $('#content').html(`Oh no !Check your username and password and try again !`)
@@ -32,19 +32,16 @@ const changePasswordFail = function (response) {
 
 const signOutSuccess = function (response) {
   delete store.user
-  console.log('you were successfully signed out')
   $('#content').html('You have successfully signed out ! See you soon')
 }
 
 const signOutFailure = function (response) {
-  // console.log('something went wrong.Here is your error :', error)
   $('#content').html('Sorry, try again to Sign Out !!')
 }
 
 const createGameSuccess = function (response) {
   console.log('create game success is ', createGameSuccess)
   store.game = response.game
-  // console.log(`store.user is `, store.game)
   $('#content').html('Good Luck on the game !!')
 }
 
