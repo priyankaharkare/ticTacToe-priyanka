@@ -4,60 +4,38 @@ const store = require('../store.js')
 const authApi = require('./api1')
 
 let playerTurn = 0 // to figure out who starts
-let currentPlayer = 'x' // a ssign a string to the player
+let currentPlayer = 'x' // a sign a string to the player
 
 const switchPlayer = function (event) {
-  console.log(`store.game.is`, store.game)
   if (event.target.innerHTML === '' && store.game.over === false) {
-<<<<<<< HEAD
-    if (currentPlayer === 'X') {
-      store.game.cells[event.target.id] = 'X'
-      event.target.innerHTML = 'X'
-=======
-     if (currentPlayer === 'x') {
+    if (currentPlayer === 'x') {
       store.game.cells[event.target.id] = 'x'
       event.target.innerHTML = 'x'
       authApi.updateGame()
->>>>>>> project
       playerTurn++ // we add a turn each time a player plays
-      console.log(`player turn is `, playerTurn)
-      console.log(`currentPlayer is ` + currentPlayer)
       didAnyoneWin(event)
-<<<<<<< HEAD
-      currentPlayer = 'O'
-     } else {
-     store.game.cells[event.target.id] = 'O'
-      event.target.innerHTML = 'O'
-=======
       currentPlayer = 'o'
-      // console.log('current player 1 is ' + currentPlayer)
     } else {
       store.game.cells[event.target.id] = 'o'
       event.target.innerHTML = 'o'
       authApi.updateGame()
->>>>>>> project
       playerTurn++
-      console.log(`player turn 2 is `, playerTurn)
-      console.log(`currentPlayer is ` + currentPlayer)
       didAnyoneWin(event)
       currentPlayer = 'x'
     }
   }
 }
 const afterWin = function (event) {
-  // console.log(currentPlayer + 'wins')
   store.game.over = true
   playerTurn = 0
-  $('#content').html(' Congratulations! You Won ' + currentPlayer + 'Cick on the Start Button and have a rematch !')
+  $('#content').html(' Congratulations! You Won ' + currentPlayer + ' Cick on the Start Button and have a rematch !')
   currentPlayer = 'x'
 }
 
 // putting in all win cobinations now,but want to check if i can just loop
 const didAnyoneWin = function (event) {
-  // console.log('gameboard is ', store.game.cells[0])
   if (store.game.cells[0] === 'x' && store.game.cells[3] === 'x' && store.game.cells[6] === 'x') {
     afterWin(event)
-    console.log(currentPlayer + 'wins')
   }
   if (store.game.cells[0] === 'x' && store.game.cells[2] === 'x' && store.game.cells[1] === 'x') {
     afterWin(event)
@@ -68,7 +46,6 @@ const didAnyoneWin = function (event) {
   if (store.game.cells[1] === 'x' && store.game.cells[4] === 'x' && store.game.cells[7] === 'x') {
   }
   if (store.game.cells[6] === 'x' && store.game.cells[7] === 'x' && store.game.cells[8] === 'x') {
-    console.log(store.game.cells, `  is store game cells`)
     afterWin(event)
   }
   if (store.game.cells[2] === 'x' && store.game.cells[5] === 'x' && store.game.cells[8] === 'x') {
@@ -107,7 +84,7 @@ const didAnyoneWin = function (event) {
   if (playerTurn === 9) {
     currentPlayer = 'x'
     playerTurn = 0
-    $('#content').html(" It's a tie ! Click on the New Game button and play again ")
+    $('#content').html(" It's a draw ! Click on the New Game button and play again ")
     store.game.over = true
   }
 }
