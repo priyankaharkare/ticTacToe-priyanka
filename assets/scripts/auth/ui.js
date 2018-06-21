@@ -56,20 +56,12 @@ const updateGameSuccess = function (response) {
 }
 
 const updateGameFail = function (response) {
-<<<<<<< HEAD
   $('#content').html(' Sorry, game update not possible at this time!')
-=======
-  $('#content').html(' Sorry, game cannot be updated at this time !')
->>>>>>> project
 }
 
 const getGamesSuccess = function (response) {
-<<<<<<< HEAD
-  $('#content').html(`Current Game id is : ${response.game.id} <br/> Your email id is: ${response.game.player_x.email}`)
-=======
   $('#content').html(`Current Game id is : ${response.game.id}
      <br/> Player X : ${response.game.player_x.email} <br/> Player O: ${response.game.player_o}`)
->>>>>>> project
 }
 
 const getGamesFail = function (response) {
