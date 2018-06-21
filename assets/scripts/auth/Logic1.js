@@ -5,7 +5,7 @@ const authApi = require('./api1')
 
 let playerTurn = 0 // to figure out who starts
 let currentPlayer = 'x' // a ssign a string to the player
-
+// game logic below. Switch turn function
 const switchPlayer = function (event) {
   console.log(`store.game.is`, store.game)
   if (event.target.innerHTML === '' && store.game.over === false) {
@@ -18,7 +18,6 @@ const switchPlayer = function (event) {
       console.log(`currentPlayer is ` + currentPlayer)
       didAnyoneWin(event)
       currentPlayer = 'o'
-      // console.log('current player 1 is ' + currentPlayer)
     } else {
       store.game.cells[event.target.id] = 'o'
       event.target.innerHTML = 'o'
@@ -32,7 +31,6 @@ const switchPlayer = function (event) {
   }
 }
 const afterWin = function (event) {
-  // console.log(currentPlayer + 'wins')
   store.game.over = true
   playerTurn = 0
   $('#content').html(' Congratulations! You Won ' + currentPlayer + 'Cick on the Start Button and have a rematch !')
@@ -41,7 +39,6 @@ const afterWin = function (event) {
 
 // putting in all win cobinations now,but want to check if i can just loop
 const didAnyoneWin = function (event) {
-  // console.log('gameboard is ', store.game.cells[0])
   if (store.game.cells[0] === 'x' && store.game.cells[3] === 'x' && store.game.cells[6] === 'x') {
     afterWin(event)
     console.log(currentPlayer + 'wins')

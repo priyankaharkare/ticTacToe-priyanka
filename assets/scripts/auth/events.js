@@ -3,9 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const authApi = require('./api1')
 const authUi = require('./ui')
-const authLogic1 = require('./logic1')
-
-// const store = require('../store.js')
+const authLogic1 = require('./Logic1')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -43,12 +41,6 @@ const onSignOut = function (data) {
   $('#sign-out-form').find('input').val('')
 }
 
-// const resetGame = function () {
-//   store.game.cells = []
-//   $('.box').empty('data-cells')
-//   // playerTurn = 0
-// }
-
 const onCreateGame = function (event) {
   event.preventDefault()
   authApi.createGame(event)
@@ -64,10 +56,7 @@ const onUpdateGame = function (event) {
 }
 
 const onGetGames = function (event) {
-  // console.log('did this click?', onGetGames)
   event.preventDefault()
-  // console.log('why do you want to know when you last lost')
-
   authApi.getGames(event)
     .then(authUi.getGamesSuccess)
     .catch(authUi.getGamesFail)
@@ -80,5 +69,4 @@ module.exports = {
   onCreateGame: onCreateGame,
   onUpdateGame: onUpdateGame,
   onGetGames: onGetGames
-  // clearField: clearField
 }
