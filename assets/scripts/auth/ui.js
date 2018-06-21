@@ -19,7 +19,7 @@ const signInSuccess = function (response) {
 }
 
 const signInFail = function (response) {
-  $('#content').html(`Oh no !Check your username and password and try again !`)
+  $('#content').html(`Oh no ! Check your username and password and try again !`)
 }
 
 const changePasswordSuccess = function (response) {
@@ -43,14 +43,12 @@ const signOutFailure = function (response) {
 }
 
 const createGameSuccess = function (response) {
-  console.log('create game success is ', createGameSuccess)
   store.game = response.game
   $('#content').html('Good Luck on the game !!')
 }
 
-const createGameFail = function (error) {
-  console.log('The error is ', error)
-  $('#content').html(`Sorry, couldnt load the game. Please try again !`)
+const createGameFail = function (response) {
+  $('#content').html(`Sorry, could not load the game. Please try again !`)
 }
 
 const updateGameSuccess = function (response) {
@@ -58,11 +56,20 @@ const updateGameSuccess = function (response) {
 }
 
 const updateGameFail = function (response) {
+<<<<<<< HEAD
   $('#content').html(' Sorry, game update not possible at this time!')
+=======
+  $('#content').html(' Sorry, game cannot be updated at this time !')
+>>>>>>> project
 }
 
 const getGamesSuccess = function (response) {
+<<<<<<< HEAD
   $('#content').html(`Current Game id is : ${response.game.id} <br/> Your email id is: ${response.game.player_x.email}`)
+=======
+  $('#content').html(`Current Game id is : ${response.game.id}
+     <br/> Player X : ${response.game.player_x.email} <br/> Player O: ${response.game.player_o}`)
+>>>>>>> project
 }
 
 const getGamesFail = function (response) {

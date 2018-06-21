@@ -3,7 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const authApi = require('./api1')
 const authUi = require('./ui')
-const authLogic1 = require('./logic1')
+const authLogic1 = require('./Logic1')
 
 const onSignUp = function (event) {
   event.preventDefault()

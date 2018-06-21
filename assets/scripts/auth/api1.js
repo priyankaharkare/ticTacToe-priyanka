@@ -1,11 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
-<<<<<<< HEAD
 const config = require('../config.js')
-=======
-const config = require('../config')
->>>>>>> project
 
 const signUp = function (data) {
   return $.ajax({

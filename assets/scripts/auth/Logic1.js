@@ -6,6 +6,7 @@ const authApi = require('./api1')
 let playerTurn = 0 // to figure out who starts
 let currentPlayer = 'x' // a sign a string to the player
 
+// game logic below. Switch turn function
 const switchPlayer = function (event) {
   if (event.target.innerHTML === '' && store.game.over === false) {
     if (currentPlayer === 'x') {
