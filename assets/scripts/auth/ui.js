@@ -1,21 +1,39 @@
 'use strict'
 const store = require('../store.js')
+const authLogic1 = require('./logic1')
+
 // store is a js object. you can add keys to it.
 // creating UI for fail and success events
 const signUpSuccess = function (signUpResponse) {
   $('#content').html("You've signed up, Please Login to begin the game!")
 }
+<<<<<<< HEAD
 
 const signUpFail = function (error) {
   console.log('Error in sign up is ', error)
   $('#content').html(`Sorry, please try again!,
       <br/> Please login if you already have an account`)
+=======
+const signUpFail = function (response) {
+  $('#content').html(`Sorry, please try again !,
+      <br/> Please Login if you already have an account !`)
+>>>>>>> project1
 }
 
 const signInSuccess = function (response) {
   store.user = response.user
+<<<<<<< HEAD
   $('#content').html(`Yaay! You're signed in! <br/> Click on the New Game Button",
     'and begin the game ! Good Luck !`)
+=======
+  $('#content').html(`Yaay! You're signed in! <br/> Click on the New Game Button,
+    and begin the game ! Good Luck !`)
+  $('#sign-up-form').hide()
+  $('#sign-out-form').show()
+  $('#change-password-form').show()
+  $('#hidden').show()
+  $('#hide-navbar').show()
+>>>>>>> project1
 }
 
 const signInFail = function (response) {
@@ -23,9 +41,7 @@ const signInFail = function (response) {
 }
 
 const changePasswordSuccess = function (response) {
-  delete store.user
-  $('#content').html('Your Password has been updated',
-    'Please use the new Password the next time you login !')
+  $('#content').html('Your Password has been updated')
 }
 
 const changePasswordFail = function (response) {
@@ -36,6 +52,8 @@ const changePasswordFail = function (response) {
 const signOutSuccess = function (response) {
   delete store.user
   $('#content').html('You have successfully signed out ! See you soon')
+  authLogic1.resetGame()
+  $('#sign-up-form').show()
 }
 
 const signOutFailure = function (response) {
@@ -60,8 +78,7 @@ const updateGameFail = function (response) {
 }
 
 const getGamesSuccess = function (response) {
-  $('#content').html(`Current Game id is : ${response.game.id}
-     <br/> Player X : ${response.game.player_x.email} <br/> Player O: ${response.game.player_o}`)
+  $('#content').html(`Current Game id is : ${response.game.id} <br/> Your email id is: ${response.game.player_x.email}`)
 }
 
 const getGamesFail = function (response) {
