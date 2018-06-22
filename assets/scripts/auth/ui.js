@@ -1,6 +1,6 @@
 'use strict'
 const store = require('../store.js')
-const auth = require('./')
+const authLogic1 = require('./Logic1')
 
 // store is a js object. you can add keys to it.
 // creating UI for fail and success events
@@ -40,7 +40,7 @@ const changePasswordFail = function (response) {
 const signOutSuccess = function (response) {
   delete store.user
   $('#content').html('You have successfully signed out ! See you soon')
-  auth.resetGame()
+  authLogic1.resetGame()
   $('#sign-up-form').show()
 }
 
