@@ -46,6 +46,11 @@ h1 {
   font-size: 70px;
 }
 
+h4 {
+  color: $grey;
+  font-size: 20px;
+}
+
 .box {
   border: 2px solid $font-color;
   border-collapse: collapse;
@@ -115,3 +120,8 @@ h1 {
   background-color: $white;
   color: $teal;
 }
+
+// #change-password-form {
+//   background-color: $white;
+//   color: $teal;
+// }

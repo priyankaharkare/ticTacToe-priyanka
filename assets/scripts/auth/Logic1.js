@@ -9,16 +9,17 @@ let currentPlayer = 'x' // assign a string to the player
 const switchPlayer = function (event) {
   if (event.target.innerHTML === '' && store.game.over === false) {
     if (currentPlayer === 'x') {
-      store.game.cells[event.target.id] = 'x'
-      event.target.innerHTML = 'x'
-      $('#content').html(` Player ${currentPlayer} 's turn`)
+      store.game.cells[event.target.id] = 'x' // store the value of the click
+      event.target.innerHTML = 'x' // the cell gets clicked by player x
+      $('#content').html(` Player ${currentPlayer} turn`)
       authApi.updateGame()
       playerTurn++ // we add a turn each time a player plays
+      didAnyoneWin(event)
       currentPlayer = 'o'
     } else {
       store.game.cells[event.target.id] = 'o'
       event.target.innerHTML = 'o'
-      $('#content').html(` Player ${currentPlayer} 's turn`)
+      $('#content').html(` Player ${currentPlayer} turn`)
       authApi.updateGame()
       playerTurn++
       didAnyoneWin(event)
@@ -29,8 +30,7 @@ const switchPlayer = function (event) {
 const afterWin = function (event) {
   store.game.over = true
   playerTurn = 0
-  $('#content').html(' Congratulations! Player ' + currentPlayer + ' wins. Cick on the Start Button and play again !')
-  currentPlayer = 'x'
+  $('#content').html(' Congratulations! Player ' + currentPlayer + ' wins. Cick on the New Game Button and play again !')
 }
 
 // putting in all win cobinations now,but want to check if i can just loop

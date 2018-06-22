@@ -1,5 +1,7 @@
 'use strict'
 const store = require('../store.js')
+const authLogic1 = require('./logic1')
+
 // store is a js object. you can add keys to it.
 const signUpSuccess = function (signUpResponse) {
   $('#content').html("You've signed up, Please Login to begin the game!")
@@ -12,15 +14,19 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#content').html(`Yaay! You're signed in! <br/> Click on the New Game Button,
     and begin the game ! Good Luck !`)
+  $('#sign-up-form').hide()
+  $('#sign-out-form').show()
+  $('#change-password-form').show()
+  $('#hidden').show()
+  $('#hide-navbar').show()
 }
+
 const signInFail = function (response) {
   $('#content').html(`Oh no ! Check your username and password and try again !`)
 }
 
 const changePasswordSuccess = function (response) {
-  delete store.user
-  $('#content').html('Your Password has been updated',
-    'Please login with your new password and play the game !')
+  $('#content').html('Your Password has been updated')
 }
 
 const changePasswordFail = function (response) {
@@ -31,6 +37,8 @@ const changePasswordFail = function (response) {
 const signOutSuccess = function (response) {
   delete store.user
   $('#content').html('You have successfully signed out ! See you soon')
+  authLogic1.resetGame()
+  $('#sign-up-form').show()
 }
 
 const signOutFailure = function (response) {
