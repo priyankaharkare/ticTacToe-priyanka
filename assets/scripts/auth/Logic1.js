@@ -4,24 +4,15 @@ const store = require('../store.js')
 const authApi = require('./api1')
 
 let playerTurn = 0 // to figure out who starts
-<<<<<<< HEAD
-let currentPlayer = 'x' // a sign a string to the player
-=======
 let currentPlayer = 'x' // assign a string to the player
->>>>>>> project1
 
 // game logic below. Switch turn function
 const switchPlayer = function (event) {
   if (event.target.innerHTML === '' && store.game.over === false) {
     if (currentPlayer === 'x') {
-<<<<<<< HEAD
-      store.game.cells[event.target.id] = 'x'
-      event.target.innerHTML = 'x'
-=======
       store.game.cells[event.target.id] = 'x' // store the value of the click
       event.target.innerHTML = 'x' // the cell gets clicked by player x
       $('#content').html(` Player ${currentPlayer} turn`)
->>>>>>> project1
       authApi.updateGame()
       playerTurn++ // we add a turn each time a player plays
       didAnyoneWin(event)
@@ -40,12 +31,7 @@ const switchPlayer = function (event) {
 const afterWin = function (event) {
   store.game.over = true
   playerTurn = 0
-<<<<<<< HEAD
-  $('#content').html(' Congratulations! You Won ' + currentPlayer + ' Cick on the Start Button and have a rematch !')
-  currentPlayer = 'x'
-=======
   $('#content').html(' Congratulations! Player ' + currentPlayer + ' wins. Cick on the New Game Button and play again !')
->>>>>>> project1
 }
 
 // putting in all win cobinations now,but want to check if i can just loop

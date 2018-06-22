@@ -7,25 +7,14 @@ const authLogic1 = require('./logic1')
 const signUpSuccess = function (signUpResponse) {
   $('#content').html("You've signed up, Please Login to begin the game!")
 }
-<<<<<<< HEAD
 
-const signUpFail = function (error) {
-  console.log('Error in sign up is ', error)
-  $('#content').html(`Sorry, please try again!,
-      <br/> Please login if you already have an account`)
-=======
 const signUpFail = function (response) {
   $('#content').html(`Sorry, please try again !,
       <br/> Please Login if you already have an account !`)
->>>>>>> project1
 }
 
 const signInSuccess = function (response) {
   store.user = response.user
-<<<<<<< HEAD
-  $('#content').html(`Yaay! You're signed in! <br/> Click on the New Game Button",
-    'and begin the game ! Good Luck !`)
-=======
   $('#content').html(`Yaay! You're signed in! <br/> Click on the New Game Button,
     and begin the game ! Good Luck !`)
   $('#sign-up-form').hide()
@@ -33,7 +22,6 @@ const signInSuccess = function (response) {
   $('#change-password-form').show()
   $('#hidden').show()
   $('#hide-navbar').show()
->>>>>>> project1
 }
 
 const signInFail = function (response) {
