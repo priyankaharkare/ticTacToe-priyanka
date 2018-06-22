@@ -13,6 +13,7 @@ const switchPlayer = function (event) {
       store.game.cells[event.target.id] = 'x' // store the value of the click
       event.target.innerHTML = 'x' // the cell gets clicked by player x
       $('#content').html(` Player ${currentPlayer} turn`)
+
       authApi.updateGame()
       playerTurn++ // we add a turn each time a player plays
       didAnyoneWin(event)

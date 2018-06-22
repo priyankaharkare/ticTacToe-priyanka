@@ -7,14 +7,14 @@
 // require('./example')
 const authEvents = require('./auth/events.js') // your JS code goes here
 
-const authLogic1 = require('./auth/logic1')
+const auth = require('./auth/')
 
 $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
-  $('.box').on('click', authLogic1.switchPlayer)
+  $('.box').on('click', auth.switchPlayer)
   $('.new-game').on('click', authEvents.onCreateGame)
   $('.get-game').on('click', authEvents.onGetGames)
   $('#hidden').hide()

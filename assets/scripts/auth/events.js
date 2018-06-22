@@ -3,7 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const authApi = require('./api1')
 const authUi = require('./ui')
-const authLogic1 = require('./Logic1')
+const auth = require('./')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -47,7 +47,7 @@ const onCreateGame = function (event) {
   authApi.createGame(event)
     .then(authUi.createGameSuccess)
     .catch(authUi.createGameFail)
-  authLogic1.resetGame()
+  auth.resetGame()
 }
 
 const onUpdateGame = function (event) {
