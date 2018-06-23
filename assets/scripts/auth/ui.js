@@ -22,6 +22,7 @@ const signInSuccess = function (response) {
   $('#change-password-form').show()
   $('#hidden').show()
   $('#hide-navbar').show()
+  $('#sign-in-form').hide()
 }
 
 const signInFail = function (response) {
@@ -40,8 +41,12 @@ const changePasswordFail = function (response) {
 const signOutSuccess = function (response) {
   delete store.user
   $('#content').html('You have successfully signed out ! See you soon')
-  authLogic1.resetGame()
   $('#sign-up-form').show()
+  $('#hide-navbar').hide()
+  $('#hidden').hide()
+  $('#sign-in-form').show()
+  store.game.cells = []
+  $('.box').empty('data-cells')
 }
 
 const signOutFailure = function (response) {
