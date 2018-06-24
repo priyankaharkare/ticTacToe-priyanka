@@ -18,4 +18,5 @@ $(() => {
   $('.get-game').on('click', authEvents.onGetGames)
   $('#hidden').hide()
   $('#hide-navbar').hide()
+  $('#get-games-form').hide()
 })

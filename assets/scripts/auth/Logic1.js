@@ -8,7 +8,7 @@ let currentPlayer = 'x' // assign a string to the player
 
 // game logic below. Switch turn function
 const switchPlayer = function (event) {
-  if (event.target.innerHTML === '' && store.game.over === false) {
+  if (store.game != null && event.target.innerHTML === '' && store.game.over === false) {
     if (currentPlayer === 'x') {
       store.game.cells[event.target.id] = 'x' // store the value of the click
       event.target.innerHTML = 'x' // the cell gets clicked by player x
@@ -51,16 +51,16 @@ const didAnyoneWin = function (event) {
   if (store.game.cells[6] === 'x' && store.game.cells[7] === 'x' && store.game.cells[8] === 'x') {
     afterWin(event)
   }
+  if (store.game.cells[1] === 'x' && store.game.cells[4] === 'x' && store.game.cells7 === 'x') {
+    afterWin(event)
+  }
   if (store.game.cells[2] === 'x' && store.game.cells[5] === 'x' && store.game.cells[8] === 'x') {
     afterWin(event)
   }
-  if (store.game.cells[3] === 'x' && store.game.cells[4] === 'x' && store.game.cells[5] === 'x') {
+  if (store.game.cells[5] === 'x' && store.game.cells[3] === 'x' && store.game.cells[4] === 'x') {
     afterWin(event)
   }
   if (store.game.cells[2] === 'x' && store.game.cells[4] === 'x' && store.game.cells[6] === 'x') {
-    afterWin(event)
-  }
-  if (store.game.cells[3] === 'o' && store.game.cells[4] === 'o' && store.game.cells[5] === 'o') {
     afterWin(event)
   }
   if (store.game.cells[0] === 'o' && store.game.cells[3] === 'o' && store.game.cells[6] === 'o') {
@@ -84,6 +84,9 @@ const didAnyoneWin = function (event) {
   if (store.game.cells[2] === 'o' && store.game.cells[4] === 'o' && store.game.cells[6] === 'o') {
     afterWin(event)
   }
+  if (store.game.cells[3] === 'o' && store.game.cells[4] === 'o' && store.game.cells[5] === 'o') {
+    afterWin(event)
+  }
   if (playerTurn === 9) { // check for tie
     currentPlayer = 'x'
     playerTurn = 0
@@ -93,10 +96,12 @@ const didAnyoneWin = function (event) {
 }
 // resetGame function to set game board back to 0 and so that player X always starts
 const resetGame = function () {
-  store.game.cells = []
-  $('.box').empty('data-cells')
-  playerTurn = 0
-  currentPlayer = 'x'
+  if (store.game != null) {
+    store.game.cells = []
+    $('.box').empty('data-cells')
+    playerTurn = 0
+    currentPlayer = 'x'
+  }
 }
 module.exports = {
   switchPlayer: switchPlayer,
