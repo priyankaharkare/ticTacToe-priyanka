@@ -11,7 +11,6 @@ const onSignUp = function (event) {
   authApi.signUp(data)
     .then(authUi.signUpSuccess)
     .catch(authUi.signUpFail)
-  $('#sign-up-form').find('input').val('')
 }
 
 const onSignIn = function (event) {
@@ -20,7 +19,6 @@ const onSignIn = function (event) {
   authApi.signIn(data)
     .then(authUi.signInSuccess)
     .catch(authUi.signInFail)
-  $('#sign-in-form').find('input').val('')
 }
 
 const onChangePassword = function (event) {
@@ -29,7 +27,6 @@ const onChangePassword = function (event) {
   authApi.changePassword(data)
     .then(authUi.changePasswordSuccess)
     .catch(authUi.changePasswordFail)
-  $('#change-password-form').find('input').val('')
 }
 
 const onSignOut = function (data) {
@@ -37,7 +34,6 @@ const onSignOut = function (data) {
   authApi.signOut()
     .then(authUi.signOutSuccess)
     .catch(authUi.signOutFailure)
-  $('#sign-out-form').find('input').val('')
 }
 
 const onCreateGame = function (event) {

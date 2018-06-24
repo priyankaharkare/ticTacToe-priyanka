@@ -13,6 +13,7 @@ $turqoise: #adeaea;
 $dark-blue: #036;
 $border: #808080;
 $red: #f00;
+$fuschia: #b200b2;
 
 body {
   background-color: $background-color;
@@ -21,6 +22,13 @@ body {
 }
 
 .buttons {
+  border: 1px solid $border;
+  float: left;
+  margin: 5px;
+  padding: 5px;
+}
+
+.get-games-form {
   border: 1px solid $border;
   float: left;
   margin: 5px;
@@ -37,8 +45,9 @@ body {
 }
 
 .content-msg {
-  color: $red;
-  font: 20px;
+  color: $fuschia;
+  font: 40px;
+  padding: 20px;
 }
 
 h1 {
@@ -54,10 +63,12 @@ h4 {
 .box {
   border: 2px solid $font-color;
   border-collapse: collapse;
+  color: $dark-blue;
   cursor: pointer;
   float: center;
   font-size: 50px;
   height: 125px;
+  text-align: center;
   width: 125px;
 }
 
