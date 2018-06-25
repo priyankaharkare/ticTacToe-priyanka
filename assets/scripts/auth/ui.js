@@ -6,17 +6,23 @@ const authLogic1 = require('./logic1')
 const signUpSuccess = function (signUpResponse) {
   $('#content').html("You've signed up, Please Login to begin the game!")
   $('#sign-up-form').find('input').val('')
+  $('#sign-in-form').find('input').val('')
+  $('#change-password-form').find('input').val('')
 }
 const signUpFail = function (response) {
   $('#content').html(`Sorry, please try again !,
       <br/> Please Login if you already have an account !`)
   $('#sign-up-form').find('input').val('')
+  $('#sign-in-form').find('input').val('')
+  $('#change-password-form').find('input').val('')
 }
 const signInSuccess = function (response) {
   store.user = response.user
   $('#content').html(`Yaay! You're signed in! <br/> Click on the New Game Button,
     and begin the game ! Good Luck !`)
   $('#sign-in-form').find('input').val('')
+  $('#sign-up-form').find('input').val('')
+  $('#change-password-form').find('input').val('')
   $('#sign-up-form').hide()
   $('#sign-out-form').show()
   $('#change-password-form').show()
@@ -28,6 +34,7 @@ const signInSuccess = function (response) {
 const signInFail = function (response) {
   $('#content').html(`Oh no ! Check your username and password and try again !`)
   $('#sign-in-form').find('input').val('')
+  $('#change-password-form').find('input').val('')
 }
 
 const changePasswordSuccess = function (response) {
@@ -45,6 +52,8 @@ const signOutSuccess = function (response) {
   delete store.user
   $('#content').html('You have successfully signed out ! See you soon')
   $('#sign-in-form').find('input').val('')
+  $('#change-password-form').find('input').val('')
+  $('#sign-up-form').find('input').val('')
   $('#sign-up-form').show()
   $('#hide-navbar').hide()
   $('#hidden').hide()
