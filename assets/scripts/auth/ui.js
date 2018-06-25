@@ -9,6 +9,7 @@ const signUpSuccess = function (signUpResponse) {
   $('#sign-up-form').find('input').val('')
   $('#sign-in-form').find('input').val('')
   $('#change-password-form').find('input').val('')
+  $('#sign-up-form').hide()
 }
 
 const signUpFail = function (response) {
@@ -37,23 +38,29 @@ const signInSuccess = function (response) {
 const signInFail = function (response) {
   $('#content').html(`Oh no ! Check your username and password and try again !`)
   $('#sign-in-form').find('input').val('')
+  $('#sign-up-form').find('input').val('')
   $('#change-password-form').find('input').val('')
 }
 
 const changePasswordSuccess = function (response) {
   $('#content').html('Your Password has been updated')
   $('#change-password-form').find('input').val('')
+  $('#sign-up-form').find('input').val('')
+  $('#sign-in-form').find('input').val('')
 }
 
 const changePasswordFail = function (response) {
   $('#content').html('Sorry, you were not able to change your password,',
     'Please try again !')
   $('#change-password-form').find('input').val('')
+  $('#sign-up-form').find('input').val('')
+  $('#sign-in-form').find('input').val('')
 }
 
 const signOutSuccess = function (response) {
   delete store.user
   $('#content').html('You have successfully signed out ! See you soon')
+  store.game.over = true
   $('#sign-in-form').find('input').val('')
   $('#change-password-form').find('input').val('')
   $('#sign-up-form').find('input').val('')
