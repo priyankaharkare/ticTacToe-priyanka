@@ -1,7 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-
-@import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
+@import '~bootstrap-sass/assets/stylesheets/bootstrap'; // @import 'https://fonts.googleapis.com/css?family=Shadows+Into+Light';
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+// @font-face {
+//   font-family: 'Open Sans';
+//   src: @import ('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+// }
 $background-color: #79cdcd;
 $font-color: #666;
 $white: #fff;
@@ -14,6 +17,9 @@ $dark-blue: #036;
 $border: #808080;
 $red: #f00;
 $fuschia: #b200b2;
+$font-family-text: 'Helvetica Neue';
+$roboto-slab: 'Roboto Slab', serif;
+$open-sans: 'Open Sans', sans-serif;
 
 body {
   background-color: $background-color;
@@ -21,19 +27,34 @@ body {
   margin: 10px;
 }
 
-.buttons {
-  border: 1px solid $border;
-  float: left;
-  margin: 5px;
-  padding: 5px;
+.row {
+  text-align: right;
+  margin: 0 auto;
+  // width: 820px;
+}
+// .box0  {
+// background-color: red;
+// }
+
+.game-box {
+  // padding-top: 10px;
+  // // padding-left: 350px;
+  // text-align: center;
+  // margin: 0 auto;
+  // position: relative;
+  position: relative;
+  height: 450px;
+  margin: 100px auto 20px;
+  width: 450px;
 }
 
-.get-games-form {
-  border: 1px solid $border;
-  float: left;
-  margin: 5px;
-  padding: 5px;
-}
+
+// .get-games-form {
+//   border: 1px solid $border;
+//   float: left;
+//   margin: 5px;
+//   padding: 5px;
+// }
 
 .btn-outline-success {
   background-color: $white;
@@ -42,28 +63,39 @@ body {
 
 .form-style {
   color: $red;
+  text-align: center;
 }
 
 .content-msg {
   color: $fuschia;
-  font: 40px;
+  font-family: $roboto-slab;
+  font-size: 35px;
+  // font: 100% Helvetica, sans-serif;
   padding: 20px;
+  text-align: center;
 }
 
 h1 {
   color: $dark-blue;
   font-size: 70px;
+  font-family: $roboto-slab;
+}
+
+.game-name {
+  text-align: center;
+  font-family: $roboto-slab;
 }
 
 h4 {
   color: $grey;
   font-size: 20px;
+  font-family: $roboto-slab;
 }
 
 .box {
-  border: 2px solid $font-color;
+  border: 3px solid $dark-blue;
   border-collapse: collapse;
-  color: $dark-blue;
+  color: $fuschia;
   cursor: pointer;
   float: center;
   font-size: 50px;
@@ -72,10 +104,44 @@ h4 {
   width: 125px;
 }
 
+.box0 {
+  border-left: none;
+  border-top: none;
+}
+
+.box1 {
+  border-top: none;
+}
+
+.box2 {
+  border-right: none;
+  border-top: none;
+}
+
+.box3 {
+  border-left: none;
+}
+
+.box5 {
+  border-right: none;
+}
+
+.box6 {
+  border-left: none;
+  border-bottom: none;
+}
+
+.box7 {
+  border-bottom: none;
+}
+
+.box8 {
+  border-bottom: none;
+  border-right: none;
+}
 // .box:hover {
 //   background-color: $green;
 // }
-
 // .grey {
 //   background-color: $grey;
 // }
@@ -84,31 +150,39 @@ h4 {
 //   background-color: $teal;
 // }
 
-.reset-button {
-  background-color: $white;
-  color: $teal;
-  float: left;
-  font-size: 15px;
-  margin: 10px;
-  padding: 5px;
-}
-
-.get-game {
-  background-color: $white;
-  color: $teal;
-  float: left;
-  font-size: 15px;
-  margin: 10px;
-  padding: 5px;
+.game-button {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 .new-game {
-  background-color: $white;
-  color: $teal;
-  float: left;
-  font-size: 15px;
-  margin: 10px;
-  padding: 5px;
+  border: $teal;
+  background: none;
+  text-transform: uppercase;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  // top: 50%;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1.4px;
+  color: $dark-blue;
+}
+//
+.get-game {
+  border: $teal;
+  background: none;
+  text-transform: uppercase;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  // top: 50%;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1.4px;
+  color: $dark-blue;
 }
 
 .login-button {
@@ -125,6 +199,9 @@ h4 {
   background-color: $white;
   color: $teal;
   margin: 30px;
+  position: absolute;
+  top: 5px;
+  right: 20px;
 }
 
 .change-password-button {
@@ -132,7 +209,29 @@ h4 {
   color: $teal;
 }
 
-// #change-password-form {
-//   background-color: $white;
-//   color: $teal;
+#change-password-form {
+  position: absolute;
+  top: 65px;
+  right: 0;
+  font-size: 0.8em;
+  width: 150px;
+}
+
+// input {
+//   width: 100px;
+//   height: 25px;
 // }
+
+// .change-password {
+//   width: 140px;
+// }
+
+.new-pw {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.old-pw {
+  display: block;
+  margin-bottom: 10px;
+}

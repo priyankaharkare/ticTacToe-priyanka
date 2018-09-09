@@ -15,46 +15,69 @@
 </head>
 
 <body class="container">
-  <nav class="navbar navbar-light bg-light">
+
+
+  <span class="game-name"><h1>TIC TAC TOE</h1></span>
+
+<!-- login below -->
+
+  <div id= "content" class= "content-msg"> Please sign up. Have an account? Sign in.
+</div>
+  <form id ='sign-up-form' class = "form-style">
+  <h4>Sign Up</h4>
+  <input name="credentials[email]" placeholder="Email" type="email"/>
+  <input name="credentials[password]" placeholder="Password" type="password"/>
+  <input name="credentials[password_confirmation]" placeholder="Confirm Password" type="password"/>
+  <button class = "login-button" type="submit"> Submit Login</button>
+  </form>
+
+  <form id ='sign-in-form' class = "form-style">
+  <h4>Sign In</h4>
+  <input name="credentials[email]" placeholder="Email" type="email"/>
+  <input name="credentials[password]" placeholder="Password" type="password"/>
+  <button class ="sign-in-button" type="submit">Log in</button>
+  </form>
+
+<div class="game-button">
+  <!-- <nav class="navbar navbar-light bg-light"> -->
 
       <div class ="buttons" id = "hide-navbar">
       <button class= "new-game">New Game</button> </div>
       <!--button class = "reset-button">Start Over</button-->
       <div id = "get-games-form" class = "get-games-form">
       <button class= "get-game">User Info</button> </div>
-  </nav>
+  <!-- </nav> -->
+</div>
 
-  <h1>TIC TAC TOE</h1>
-
-
-  <div id= "content" class= "content-msg"> Please Sign-In or Sign-Up to begin the game !</div>
-
-  <div class="row">
-    <div id="0" class="col-xs-6 col-md-4 box"></div>
-    <div id="1" class="col-xs-6 col-md-4 box"></div>
-    <div id="2" class="col-xs-6 col-md-4 box"></div>
+<!-- tic tac toe below -->
+  <div class="game-box">
+    <div class="row">
+    <div id="0" class="col-xs-6 col-md-4 box box0"></div>
+    <div id="1" class="col-xs-6 col-md-4 box box1"></div>
+    <div id="2" class="col-xs-6 col-md-4 box box2"></div>
   </div>
 
   <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-  <div class="row">
-    <div id="3" class="col-xs-6 col-md-4 box"></div>
-    <div id="4" class="col-xs-6 col-md-4 box"></div>
-    <div id="5" class="col-xs-6 col-md-4 box"></div>
 
+  <div class="row">
+     <div id="3"class="col-xs-6 col-md-4 box box3"></div>
+    <div id="4" class="col-xs-6 col-md-4 box box4"></div>
+    <div id="5" class="col-xs-6 col-md-4 box box5"></div>
   </div>
 
   <!-- Columns start at 50% wide on mobile and bump up to 33.3% 6wide on desktop -->
   <div class="row">
-    <div id="6" class="col-xs-6 col-md-4 box"></div>
-    <div id="7" class="col-xs-6 col-md-4 box"></div>
-    <div id="8" class="col-xs-6 col-md-4 box"></div>
+    <div id="6" class="col-xs-6 col-md-4 box box6"></div>
+    <div id="7" class="col-xs-6 col-md-4 box box7"></div>
+    <div id="8" class="col-xs-6 col-md-4 box box8"></div>
   </div>
+</div>
 
  <div class = "end-game">
    <div class "text"></div>
 </div>
 
-<form id ='sign-up-form' class = "form-style">
+<!-- <form id ='sign-up-form' class = "form-style">
 <h4>Sign Up</h4>
 <input name="credentials[email]" placeholder="Email" type="email"/>
 <input name="credentials[password]" placeholder="Password" type="password"/>
@@ -74,6 +97,19 @@
 <h4>Change Password </h4>
 <input name="passwords[old]" placeholder="Old Password" type="password"/>
 <input name="passwords[new]" placeholder="New Password" type="password"/>
+<button class ="change-password-button" type="submit">Change Password</button>
+</form>
+
+<section>
+<button id ="sign-out" class = "signing-out">Sign Out</button>
+</section >
+</div> -->
+<div id = 'hidden'>
+<form id ='change-password-form' class = "form-style" >
+<h4>Change Password </h4>
+<input class="old-pw" name="passwords[old]" placeholder="Old Password" type="password"/>
+</br>
+<input class="new-pw"name="passwords[new]" placeholder="New Password" type="password"/>
 <button class ="change-password-button" type="submit">Change Password</button>
 </form>
 

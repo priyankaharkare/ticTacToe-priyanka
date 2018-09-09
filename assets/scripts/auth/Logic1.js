@@ -29,10 +29,11 @@ const switchPlayer = function (event) {
     }
   }
 }
+// what happens if soeone wins? We need to make the game state to be over and also display a message to the user
 const afterWin = function (event) {
   store.game.over = true
   playerTurn = 0
-  $('#content').html(' Congratulations! Player ' + currentPlayer + ' wins. Cick on the New Game Button and play again !')
+  $('#content').html(' Congratulations! Player ' + currentPlayer + ' wins. </br> Cick on the New Game Button and play again !')
 }
 
 // putting in all win cobinations now,but want to check if i can just loop
